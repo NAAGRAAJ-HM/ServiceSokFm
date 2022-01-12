@@ -2,6 +2,6 @@
 
 class_SokFm SokFm;
 
-void class_SokFm::InitFunction(void){
+FUNC(void, SOKFM_CODE) class_SokFm::InitFunction(void){
 }
 

@@ -1,20 +1,18 @@
+#pragma once
 /*****************************************************/
-/* File   : SokFm.cpp                                */
+/* File   : SokFm_SchM.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "SokFm.h"
+#include "Compiler_Cfg_SokFm.h"
 
-#include "SokFm_EcuM.h"
-#include "SokFm_SchM.h"
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
-/*****************************************************/
-
 /*****************************************************/
 
 /*****************************************************/
@@ -24,6 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class class_SokFm_SchM : public class_SchM_Client{
+   public:
+/*****************************************************/
+/* FUNCTIONS                                         */
+/*****************************************************/
+      FUNC(void, SOKFM_CODE) MainFunction(void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -36,20 +41,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_SokFm_EcuM SokFm_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_SokFm = &SokFm_EcuM;
-class_SokFm_SchM SokFm_SchM;
-class_SchM_Client *SchM_Client_ptr_SokFm = &SokFm_SchM;
-class_SokFm SokFm;
-
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
-FUNC(void, SOKFM_CODE) class_SokFm_EcuM::InitFunction(void){
-}
-
-FUNC(void, SOKFM_CODE) class_SokFm_SchM::MainFunction(void){
-}
+extern class_SchM_Client *SchM_Client_ptr_SokFm;
 
 /*****************************************************/
 /* EOF                                               */

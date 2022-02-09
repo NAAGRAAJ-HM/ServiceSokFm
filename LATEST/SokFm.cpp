@@ -36,19 +36,20 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_SokFm_EcuM SokFm_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_SokFm = &SokFm_EcuM;
-class_SokFm_SchM SokFm_SchM;
-class_SchM_Client *SchM_Client_ptr_SokFm = &SokFm_SchM;
+class_SokFm_EcuM_Init SokFm_EcuM_Init;
+class_SokFm_SchM_Main SokFm_SchM_Main;
 class_SokFm SokFm;
+
+class_EcuM_Init_Client *EcuM_Init_Client_ptr_SokFm = &SokFm_EcuM_Init;
+class_SchM_Main_Client *SchM_Main_Client_ptr_SokFm = &SokFm_SchM_Main;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, SOKFM_CODE) class_SokFm_EcuM::InitFunction(void){
+FUNC(void, SOKFM_CODE) class_SokFm_EcuM_Init::InitFunction(void){
 }
 
-FUNC(void, SOKFM_CODE) class_SokFm_SchM::MainFunction(void){
+FUNC(void, SOKFM_CODE) class_SokFm_SchM_Main::MainFunction(void){
 }
 
 /*****************************************************/

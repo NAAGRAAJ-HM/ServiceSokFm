@@ -6,15 +6,12 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "SokFm.h"
+#include "module.h"
 
-#include "SokFm_EcuM.h"
-#include "SokFm_SchM.h"
+#include "SokFm_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
-/*****************************************************/
-
 /*****************************************************/
 
 /*****************************************************/
@@ -24,6 +21,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class module_SokFm : public class_module{
+   public:
+      FUNC(void, SOKFM_CODE) InitFunction   (void);
+      FUNC(void, SOKFM_CODE) DeInitFunction (void);
+      FUNC(void, SOKFM_CODE) MainFunction   (void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -36,20 +39,18 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_SokFm_EcuM_Init SokFm_EcuM_Init;
-class_SokFm_SchM_Main SokFm_SchM_Main;
-class_SokFm SokFm;
+module_SokFm SokFm;
 
-class_EcuM_Init_Client *EcuM_Init_Client_ptr_SokFm = &SokFm_EcuM_Init;
-class_SchM_Main_Client *SchM_Main_Client_ptr_SokFm = &SokFm_SchM_Main;
+class_EcuM_Client *EcuM_Client_ptr_SokFm = &SokFm;
+class_SchM_Client *SchM_Client_ptr_SokFm = &SokFm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, SOKFM_CODE) class_SokFm_EcuM_Init::InitFunction(void){
+FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(void){
 }
 
-FUNC(void, SOKFM_CODE) class_SokFm_SchM_Main::MainFunction(void){
+FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){
 }
 
 /*****************************************************/

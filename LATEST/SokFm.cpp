@@ -41,8 +41,8 @@ class module_SokFm : public class_module{
 /*****************************************************/
 module_SokFm SokFm;
 
-class_EcuM_Client *EcuM_Client_ptr_SokFm = &SokFm;
-class_SchM_Client *SchM_Client_ptr_SokFm = &SokFm;
+//class_EcuM_Client *EcuM_Client_ptr_SokFm = &SokFm;
+//class_SchM_Client *SchM_Client_ptr_SokFm = &SokFm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

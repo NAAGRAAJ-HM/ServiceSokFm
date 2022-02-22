@@ -7,7 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-
+#include "SokFm_EcuM.h"
+#include "SokFm_SchM.h"
 #include "SokFm_Unused.h"
 
 /*****************************************************/
@@ -21,7 +22,11 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class module_SokFm : public class_module{
+class module_SokFm:
+      public abstract_module
+   ,  public interface_SokFm_EcuM
+   ,  public interface_SokFm_SchM
+{
    public:
       FUNC(void, SOKFM_CODE) InitFunction   (void);
       FUNC(void, SOKFM_CODE) DeInitFunction (void);
@@ -41,13 +46,16 @@ class module_SokFm : public class_module{
 /*****************************************************/
 module_SokFm SokFm;
 
-//class_EcuM_Client *EcuM_Client_ptr_SokFm = &SokFm;
-//class_SchM_Client *SchM_Client_ptr_SokFm = &SokFm;
+interface_SokFm_EcuM *EcuM_Client_ptr_SokFm = &SokFm;
+interface_SokFm_SchM *SchM_Client_ptr_SokFm = &SokFm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
 FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(void){
+}
+
+FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
 }
 
 FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){

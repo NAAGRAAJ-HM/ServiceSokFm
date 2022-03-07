@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_SokFm:
       public abstract_module
-   ,  public interface_SokFm_EcuM
-   ,  public interface_SokFm_SchM
 {
    public:
       FUNC(void, SOKFM_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_SokFm:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_SokFm SokFm;
-
-interface_SokFm_EcuM *EcuM_Client_ptr_SokFm = &SokFm;
-interface_SokFm_SchM *SchM_Client_ptr_SokFm = &SokFm;
+module_SokFm   SokFm;
+infEcuMClient* gptrinfEcuMClient_SokFm = &SokFm;
+infSchMClient* gptrinfSchMClient_SokFm = &SokFm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

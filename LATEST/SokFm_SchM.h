@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_SokFm_SchM *SchM_Client_ptr_SokFm;
+extern infSchMClient *gptrinfSchMClient_SokFm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

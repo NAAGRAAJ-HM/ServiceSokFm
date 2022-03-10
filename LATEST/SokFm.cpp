@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "SokFm_EcuM.h"
-#include "SokFm_SchM.h"
+#include "infSokFm_EcuM.h"
+#include "infSokFm_SchM.h"
 #include "SokFm_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_SokFm:
    public:
       FUNC(void, SOKFM_CODE) InitFunction   (void);
       FUNC(void, SOKFM_CODE) DeInitFunction (void);
+      FUNC(void, SOKFM_CODE) GetVersionInfo (void);
       FUNC(void, SOKFM_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_SokFm:
 /*****************************************************/
 module_SokFm   SokFm;
 infEcuMClient* gptrinfEcuMClient_SokFm = &SokFm;
+infDcmClient*  gptrinfDcmClient_SokFm  = &SokFm;
 infSchMClient* gptrinfSchMClient_SokFm = &SokFm;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(void){
 }
 
 FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
+}
+
+FUNC(void, SOKFM_CODE) module_SokFm::GetVersionInfo(void){
 }
 
 FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){

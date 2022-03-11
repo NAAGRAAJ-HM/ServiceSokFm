@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : SokFm_SchM.h                             */
+/* File   : infSokFm_Dcm.h                           */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infSchMClient* gptrinfSchMClient_SokFm;
+extern infDcmClient* gptrinfDcmClient_SokFm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */

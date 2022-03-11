@@ -1,15 +1,13 @@
+#pragma once
 /*****************************************************/
-/* File   : SokFm.cpp                                */
+/* File   : infSokFm_EcuM.h                          */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "module.h"
-#include "infSokFm_EcuM.h"
-#include "infSokFm_Dcm.h"
-#include "infSokFm_SchM.h"
+#include "Compiler_Cfg_SokFm.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,15 +20,6 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class module_SokFm:
-      public abstract_module
-{
-   public:
-      FUNC(void, SOKFM_CODE) InitFunction   (void);
-      FUNC(void, SOKFM_CODE) DeInitFunction (void);
-      FUNC(void, SOKFM_CODE) GetVersionInfo (void);
-      FUNC(void, SOKFM_CODE) MainFunction   (void);
-};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -43,27 +32,11 @@ class module_SokFm:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_SokFm   SokFm;
-infEcuMClient* gptrinfEcuMClient_SokFm = &SokFm;
-infDcmClient*  gptrinfDcmClient_SokFm  = &SokFm;
-infSchMClient* gptrinfSchMClient_SokFm = &SokFm;
+extern infEcuMClient* gptrinfEcuMClient_SokFm;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(void){
-}
-
-FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
-}
-
-FUNC(void, SOKFM_CODE) module_SokFm::GetVersionInfo(void){
-}
-
-FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){
-}
-
-#include "SokFm_Unused.h"
 
 /*****************************************************/
 /* EOF                                               */

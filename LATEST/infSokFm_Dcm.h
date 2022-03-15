@@ -32,7 +32,7 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern infDcmClient* gptrinfDcmClient_SokFm;
+extern CONSTP2VAR(infDcmClient, SOKFM_VAR, SOKFM_CONST) gptrinfDcmClient_SokFm;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */

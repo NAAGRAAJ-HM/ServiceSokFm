@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infSokFm_Version.h"
+#include "SokFm_Cfg.h"
 #include "infSokFm_EcuM.h"
 #include "infSokFm_Dcm.h"
 #include "infSokFm_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define SOKFM_AR_RELEASE_MAJOR_VERSION                                         4
+#define SOKFM_AR_RELEASE_MINOR_VERSION                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(SOKFM_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible SOKFM_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(SOKFM_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible SOKFM_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
 }
 
 FUNC(void, SOKFM_CODE) module_SokFm::GetVersionInfo(void){
+#if(STD_ON == SokFm_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){

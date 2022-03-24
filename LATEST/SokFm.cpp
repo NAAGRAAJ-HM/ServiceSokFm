@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "SokFm_Cfg.h"
+#include "CfgSokFm.h"
 #include "infSokFm_EcuM.h"
 #include "infSokFm_Dcm.h"
 #include "infSokFm_SchM.h"

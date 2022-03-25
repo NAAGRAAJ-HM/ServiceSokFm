@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgSokFm.h"
-#include "infSokFm_EcuM.h"
-#include "infSokFm_Dcm.h"
-#include "infSokFm_SchM.h"
+#include "module.hpp"
+#include "CfgSokFm.hpp"
+#include "infSokFm_EcuM.hpp"
+#include "infSokFm_Dcm.hpp"
+#include "infSokFm_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, SOKFM_CODE) module_SokFm::GetVersionInfo(void){
 FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){
 }
 
-#include "SokFm_Unused.h"
+#include "SokFm_Unused.hpp"
 
 /******************************************************************************/
 /* EOF                                                                        */

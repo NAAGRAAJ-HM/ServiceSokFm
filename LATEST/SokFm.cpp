@@ -90,7 +90,9 @@ FUNC(void, SOKFM_CODE) module_SokFm::GetVersionInfo(void){
 FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){
 }
 
-#include "SokFm_Unused.hpp"
+class class_SokFm_Unused{
+   public:
+};
 
 /******************************************************************************/
 /* EOF                                                                        */

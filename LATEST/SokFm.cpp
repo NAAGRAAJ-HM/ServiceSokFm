@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgSokFm.hpp"
 #include "infSokFm_EcuM.hpp"
 #include "infSokFm_Dcm.hpp"
 #include "infSokFm_SchM.hpp"
@@ -36,37 +35,40 @@ class module_SokFm:
       public abstract_module
 {
    public:
+      module_SokFm(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, SOKFM_CODE) InitFunction   (void);
       FUNC(void, SOKFM_CODE) DeInitFunction (void);
-      FUNC(void, SOKFM_CODE) GetVersionInfo (void);
       FUNC(void, SOKFM_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, SOKFM_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_SokFm, SOKFM_VAR) SokFm;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, SOKFM_VAR, SOKFM_CONST) gptrinfEcuMClient_SokFm = &SokFm;
+CONSTP2VAR(infDcmClient,  SOKFM_VAR, SOKFM_CONST) gptrinfDcmClient_SokFm  = &SokFm;
+CONSTP2VAR(infSchMClient, SOKFM_VAR, SOKFM_CONST) gptrinfSchMClient_SokFm = &SokFm;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgSokFm.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_SokFm, SOKFM_VAR) SokFm;
-CONSTP2VAR(infEcuMClient, SOKFM_VAR, SOKFM_CONST) gptrinfEcuMClient_SokFm = &SokFm;
-CONSTP2VAR(infDcmClient,  SOKFM_VAR, SOKFM_CONST) gptrinfDcmClient_SokFm  = &SokFm;
-CONSTP2VAR(infSchMClient, SOKFM_VAR, SOKFM_CONST) gptrinfSchMClient_SokFm = &SokFm;
+VAR(module_SokFm, SOKFM_VAR) SokFm(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(void){
 
 FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
    SokFm.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, SOKFM_CODE) module_SokFm::GetVersionInfo(void){
-#if(STD_ON == SokFm_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){

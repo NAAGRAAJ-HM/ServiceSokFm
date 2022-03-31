@@ -37,10 +37,9 @@ class module_SokFm:
    public:
       module_SokFm(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, SOKFM_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, SOKFM_CONFIG_DATA, SOKFM_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, SOKFM_CODE) InitFunction   (void);
       FUNC(void, SOKFM_CODE) DeInitFunction (void);
       FUNC(void, SOKFM_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_SokFm, SOKFM_VAR) SokFm(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
-   CONSTP2CONST(CfgSokFm_Type, CFGSOKFM_CONFIG_DATA, CFGSOKFM_APPL_CONST) lptrCfgSokFm
+   CONSTP2CONST(CfgModule_TypeAbstract, SOKFM_CONFIG_DATA, SOKFM_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgSokFm){
+   if(E_OK == IsInitDone){
 #if(STD_ON == SokFm_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgSokFm for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == SokFm_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_SokFm as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   SokFm.IsInitDone = E_OK;
 }
 
 FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
-   SokFm.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == SokFm_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){

@@ -78,6 +78,7 @@ VAR(module_SokFm, SOKFM_VAR) SokFm(
 FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, SOKFM_CONFIG_DATA, SOKFM_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == SokFm_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == SokFm_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == SokFm_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
 // use PBcfg_SokFm as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == SokFm_InitCheck)
    }
+#endif
 }
 
 FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
+#if(STD_ON == SokFm_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == SokFm_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == SokFm_InitCheck)
    }
+#endif
 }
 
 FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){
+#if(STD_ON == SokFm_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == SokFm_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == SokFm_InitCheck)
+   }
+#endif
 }
 
 class class_SokFm_Unused{

@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define SOKFM_AR_RELEASE_MAJOR_VERSION                                         4
-#define SOKFM_AR_RELEASE_MINOR_VERSION                                         3
+#define SOKFM_AR_RELEASE_VERSION_MAJOR                                         4
+#define SOKFM_AR_RELEASE_VERSION_MINOR                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(SOKFM_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible SOKFM_AR_RELEASE_MAJOR_VERSION!"
+#if(SOKFM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible SOKFM_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(SOKFM_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible SOKFM_AR_RELEASE_MINOR_VERSION!"
+#if(SOKFM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible SOKFM_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -63,8 +63,10 @@ CONSTP2VAR(infSchMClient, SOKFM_VAR, SOKFM_CONST) gptrinfSchMClient_SokFm = &Sok
 /******************************************************************************/
 VAR(module_SokFm, SOKFM_VAR) SokFm(
    {
-         0x0000
-      ,  0xFFFF
+         SOKFM_AR_RELEASE_VERSION_MAJOR
+      ,  SOKFM_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'

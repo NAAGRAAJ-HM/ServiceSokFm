@@ -101,8 +101,8 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgSokFm;
          }
       }
       IsInitDone = E_OK;

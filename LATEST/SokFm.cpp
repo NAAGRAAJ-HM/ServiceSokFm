@@ -31,8 +31,13 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_SokFm_Functionality{
+   public:
+};
+
 class module_SokFm:
       public abstract_module
+   ,  public class_SokFm_Functionality
 {
    public:
       module_SokFm(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +89,10 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == SokFm_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +101,10 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == SokFm_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +129,10 @@ FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == SokFm_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +149,10 @@ FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == SokFm_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -141,10 +162,6 @@ FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){
    }
 #endif
 }
-
-class class_SokFm_Unused{
-   public:
-};
 
 /******************************************************************************/
 /* EOF                                                                        */

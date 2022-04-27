@@ -31,10 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_SokFm_Functionality{
-   public:
-};
-
 class module_SokFm:
       public abstract_module
    ,  public class_SokFm_Functionality

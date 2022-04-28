@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "SokFm_core.hpp"
 #include "infSokFm_EcuM.hpp"
 #include "infSokFm_Dcm.hpp"
 #include "infSokFm_SchM.hpp"

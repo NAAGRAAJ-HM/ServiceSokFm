@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgSokFm.hpp"
 #include "SokFm_core.hpp"
-#include "infSokFm_EcuM.hpp"
-#include "infSokFm_Dcm.hpp"
-#include "infSokFm_SchM.hpp"
+#include "infSokFm.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_SokFm:
       );
       FUNC(void, SOKFM_CODE) DeInitFunction (void);
       FUNC(void, SOKFM_CODE) MainFunction   (void);
+      SOKFM_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_SokFm, SOKFM_VAR) SokFm;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, SOKFM_VAR, SOKFM_CONST) gptrinfSchMClient_SokFm = &Sok
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgSokFm.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */

@@ -82,79 +82,79 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, SOKFM_CONFIG_DATA, SOKFM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == SokFm_InitCheck)
-   if(E_OK == IsInitDone){
-#if(STD_ON == SokFm_DevErrorDetect)
-      Det_ReportError(
-      0 //TBD: IdModule
-   ,  0 //TBD: IdInstance
-   ,  0 //TBD: IdApi
-   ,  0 //TBD: IdError
-      );
+   if(E_OK != IsInitDone){
 #endif
-   }
-   else{
-#endif
-      if(NULL_PTR == lptrCfgModule){
-#if(STD_ON == SokFm_DevErrorDetect)
-         Det_ReportError(
-      0 //TBD: IdModule
-   ,  0 //TBD: IdInstance
-   ,  0 //TBD: IdApi
-   ,  0 //TBD: IdError
-         );
-#endif
-      }
-      else{
+      if(NULL_PTR != lptrCfgModule){
          if(STD_LOW){
-// check lptrCfgModule for memory faults
+            // check lptrCfgModule for memory faults
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfgCanIf as back-up configuration
+            // use PBcfgCanIf as back-up configuration
             lptrCfg = &PBcfgSokFm;
          }
       }
-      IsInitDone = E_OK;
+      else{
+#if(STD_ON == SokFm_DevErrorDetect)
+         Det_ReportError(
+               0 //TBD: IdModule
+            ,  0 //TBD: IdInstance
+            ,  0 //TBD: IdApi
+            ,  0 //TBD: IdError
+         );
+#endif
+      }
 #if(STD_ON == SokFm_InitCheck)
+      IsInitDone = E_OK;
+   }
+   else{
+#if(STD_ON == SokFm_DevErrorDetect)
+      Det_ReportError(
+            0 //TBD: IdModule
+         ,  0 //TBD: IdInstance
+         ,  0 //TBD: IdApi
+         ,  0 //TBD: IdError
+      );
+#endif
    }
 #endif
 }
 
 FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
 #if(STD_ON == SokFm_InitCheck)
-   if(E_OK != IsInitDone){
-#if(STD_ON == SokFm_DevErrorDetect)
-      Det_ReportError(
-      0 //TBD: IdModule
-   ,  0 //TBD: IdInstance
-   ,  0 //TBD: IdApi
-   ,  0 //TBD: IdError
-      );
+   if(E_OK == IsInitDone){
 #endif
+#if(STD_ON == SokFm_InitCheck)
+      IsInitDone = E_NOT_OK;
    }
    else{
+#if(STD_ON == SokFm_DevErrorDetect)
+      Det_ReportError(
+            0 //TBD: IdModule
+         ,  0 //TBD: IdInstance
+         ,  0 //TBD: IdApi
+         ,  0 //TBD: IdError
+      );
 #endif
-      IsInitDone = E_NOT_OK;
-#if(STD_ON == SokFm_InitCheck)
    }
 #endif
 }
 
 FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){
 #if(STD_ON == SokFm_InitCheck)
-   if(E_OK != IsInitDone){
-#if(STD_ON == SokFm_DevErrorDetect)
-      Det_ReportError(
-      0 //TBD: IdModule
-   ,  0 //TBD: IdInstance
-   ,  0 //TBD: IdApi
-   ,  0 //TBD: IdError
-      );
-#endif
-   }
-   else{
+   if(E_OK == IsInitDone){
 #endif
 #if(STD_ON == SokFm_InitCheck)
+   }
+   else{
+#if(STD_ON == SokFm_DevErrorDetect)
+      Det_ReportError(
+            0 //TBD: IdModule
+         ,  0 //TBD: IdInstance
+         ,  0 //TBD: IdApi
+         ,  0 //TBD: IdError
+      );
+#endif
    }
 #endif
 }

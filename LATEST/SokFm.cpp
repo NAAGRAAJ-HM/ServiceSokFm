@@ -113,7 +113,7 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  SOKFM_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  SOKFM_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  SOKFM_E_UNINIT
       );
 #endif
    }

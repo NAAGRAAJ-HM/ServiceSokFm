@@ -89,7 +89,10 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, SOKFM_CONFIG_DATA, SOKFM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == SokFm_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
 
 FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
 #if(STD_ON == SokFm_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == SokFm_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
 
 FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){
 #if(STD_ON == SokFm_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == SokFm_InitCheck)
    }

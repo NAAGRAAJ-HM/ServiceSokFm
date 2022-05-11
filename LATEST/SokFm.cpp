@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgSokFm.hpp"
 #include "SokFm_core.hpp"
-#include "infSokFm.hpp"
+#include "infSokFm_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_SokFm:
+   INTERFACES_EXPORTED_SOKFM
       public abstract_module
    ,  public class_SokFm_Functionality
 {

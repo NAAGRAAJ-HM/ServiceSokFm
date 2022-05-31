@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_SokFm:
-   INTERFACES_EXPORTED_SOKFM
+      INTERFACES_EXPORTED_SOKFM
       public abstract_module
    ,  public class_SokFm_Functionality
 {

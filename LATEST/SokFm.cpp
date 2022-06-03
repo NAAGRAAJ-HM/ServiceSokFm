@@ -10,6 +10,7 @@
 #include "CfgSokFm.hpp"
 #include "SokFm_core.hpp"
 #include "infSokFm_Exp.hpp"
+#include "infSokFm_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */

@@ -73,10 +73,6 @@ CONSTP2VAR(infSchMClient, SOKFM_VAR, SOKFM_CONST) gptrinfSchMClient_SokFm = &Sok
 /******************************************************************************/
 VAR(module_SokFm, SOKFM_VAR) SokFm(
    {
-#if(STD_ON == _ReSIM)
-         "SokFm",
-#else
-#endif
          SOKFM_AR_RELEASE_VERSION_MAJOR
       ,  SOKFM_AR_RELEASE_VERSION_MINOR
       ,  0x00

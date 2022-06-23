@@ -130,7 +130,9 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
 #endif
 }
 
-FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
+FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(
+   void
+){
 #if(STD_ON == SokFm_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, SOKFM_CODE) module_SokFm::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(void){
+FUNC(void, SOKFM_CODE) module_SokFm::MainFunction(
+   void
+){
 #if(STD_ON == SokFm_InitCheck)
    if(
          E_OK

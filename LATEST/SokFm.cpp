@@ -82,12 +82,7 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgSokFm;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == SokFm_DevErrorDetect)

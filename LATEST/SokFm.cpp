@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgSokFm.hpp"
-#include "SokFm_core.hpp"
-#include "infSokFm_Exp.hpp"
+#include "SokFm.hpp"
 #include "infSokFm_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_SokFm:
-      INTERFACES_EXPORTED_SOKFM
-      public abstract_module
-   ,  public class_SokFm_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, SOKFM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, SOKFM_CONFIG_DATA, SOKFM_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, SOKFM_CODE) DeInitFunction (void);
-      FUNC(void, SOKFM_CODE) MainFunction   (void);
-      SOKFM_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_SokFm, SOKFM_VAR) SokFm;
 
 /******************************************************************************/
 /* CONSTS                                                                     */

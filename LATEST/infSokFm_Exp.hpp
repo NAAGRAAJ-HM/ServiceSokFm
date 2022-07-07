@@ -8,9 +8,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "infSokFm_EcuM.hpp"
-#include "infSokFm_Dcm.hpp"
 #include "infSokFm_Det.hpp"
-#include "infSokFm_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */

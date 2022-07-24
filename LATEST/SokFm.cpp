@@ -48,7 +48,8 @@ VAR(module_SokFm, SOKFM_VAR) SokFm;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, SOKFM_CONFIG_DATA, SOKFM_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, SOKFM_CONST,       SOKFM_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   SOKFM_CONFIG_DATA, SOKFM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == SokFm_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == SokFm_DevErrorDetect)

@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstSokFm.hpp"
 #include "CfgSokFm.hpp"
 #include "SokFm_core.hpp"
 #include "infSokFm_Exp.hpp"
@@ -31,13 +32,15 @@ class module_SokFm:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstSokFm_Type* lptrConst = (ConstSokFm_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, SOKFM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, SOKFM_CONFIG_DATA, SOKFM_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, SOKFM_CONST,       SOKFM_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   SOKFM_CONFIG_DATA, SOKFM_APPL_CONST) lptrCfgModule
       );
       FUNC(void, SOKFM_CODE) DeInitFunction (void);
       FUNC(void, SOKFM_CODE) MainFunction   (void);

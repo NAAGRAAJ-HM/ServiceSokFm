@@ -61,7 +61,7 @@ FUNC(void, SOKFM_CODE) module_SokFm::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstSokFm_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{

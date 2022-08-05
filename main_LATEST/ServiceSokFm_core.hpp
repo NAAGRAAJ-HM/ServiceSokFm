@@ -12,9 +12,9 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define SOKFM_CORE_FUNCTIONALITIES                                             \
+#define SERVICESOKFM_CORE_FUNCTIONALITIES                                             \
 
-#define SOKFM_CORE_FUNCTIONALITIES_VIRTUAL                                     \
+#define SERVICESOKFM_CORE_FUNCTIONALITIES_VIRTUAL                                     \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -25,7 +25,7 @@
 /******************************************************************************/
 class class_ServiceSokFm_Functionality{
    public:
-      SOKFM_CORE_FUNCTIONALITIES_VIRTUAL
+      SERVICESOKFM_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

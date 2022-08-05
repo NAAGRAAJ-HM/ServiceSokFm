@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define SOKFM_AR_RELEASE_VERSION_MAJOR                                         4
-#define SOKFM_AR_RELEASE_VERSION_MINOR                                         3
+#define SERVICESOKFM_AR_RELEASE_VERSION_MAJOR                                         4
+#define SERVICESOKFM_AR_RELEASE_VERSION_MINOR                                         3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(SOKFM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible SOKFM_AR_RELEASE_VERSION_MAJOR!"
+#if(SERVICESOKFM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible SERVICESOKFM_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(SOKFM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible SOKFM_AR_RELEASE_VERSION_MINOR!"
+#if(SERVICESOKFM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible SERVICESOKFM_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_ServiceSokFm, SOKFM_VAR) ServiceSokFm;
+VAR(module_ServiceSokFm, SERVICESOKFM_VAR) ServiceSokFm;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, SOKFM_CODE) module_ServiceSokFm::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, SOKFM_CONST,       SOKFM_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   SOKFM_CONFIG_DATA, SOKFM_APPL_CONST) lptrCfgModule
+FUNC(void, SERVICESOKFM_CODE) module_ServiceSokFm::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, SERVICESOKFM_CONST,       SERVICESOKFM_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICESOKFM_CONFIG_DATA, SERVICESOKFM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == ServiceSokFm_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, SOKFM_CODE) module_ServiceSokFm::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  SOKFM_E_UNINIT
+         ,  SERVICESOKFM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, SOKFM_CODE) module_ServiceSokFm::DeInitFunction(
+FUNC(void, SERVICESOKFM_CODE) module_ServiceSokFm::DeInitFunction(
    void
 ){
 #if(STD_ON == ServiceSokFm_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, SOKFM_CODE) module_ServiceSokFm::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  SOKFM_E_UNINIT
+         ,  SERVICESOKFM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, SOKFM_CODE) module_ServiceSokFm::MainFunction(
+FUNC(void, SERVICESOKFM_CODE) module_ServiceSokFm::MainFunction(
    void
 ){
 #if(STD_ON == ServiceSokFm_InitCheck)
@@ -132,7 +132,7 @@ FUNC(void, SOKFM_CODE) module_ServiceSokFm::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  SOKFM_E_UNINIT
+         ,  SERVICESOKFM_E_UNINIT
       );
 #endif
    }

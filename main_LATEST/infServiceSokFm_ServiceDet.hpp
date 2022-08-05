@@ -21,7 +21,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 typedef enum{
-      SOKFM_E_UNINIT
+      SERVICESOKFM_E_UNINIT
 }ServiceSokFm_TypeServiceDetErrorCode;
 
 /******************************************************************************/

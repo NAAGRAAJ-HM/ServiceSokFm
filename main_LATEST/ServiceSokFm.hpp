@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_ServiceSokFm:
-      INTERFACES_EXPORTED_SOKFM
+      INTERFACES_EXMCALPORTED_SERVICESOKFM
       public abstract_module
    ,  public class_ServiceSokFm_Functionality
 {
@@ -38,13 +38,13 @@ class module_ServiceSokFm:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, SOKFM_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, SOKFM_CONST,       SOKFM_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   SOKFM_CONFIG_DATA, SOKFM_APPL_CONST) lptrCfgModule
+      FUNC(void, SERVICESOKFM_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, SERVICESOKFM_CONST,       SERVICESOKFM_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICESOKFM_CONFIG_DATA, SERVICESOKFM_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, SOKFM_CODE) DeInitFunction (void);
-      FUNC(void, SOKFM_CODE) MainFunction   (void);
-      SOKFM_CORE_FUNCTIONALITIES
+      FUNC(void, SERVICESOKFM_CODE) DeInitFunction (void);
+      FUNC(void, SERVICESOKFM_CODE) MainFunction   (void);
+      SERVICESOKFM_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -58,7 +58,7 @@ class module_ServiceSokFm:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_ServiceSokFm, SOKFM_VAR) ServiceSokFm;
+extern VAR(module_ServiceSokFm, SERVICESOKFM_VAR) ServiceSokFm;
 
 /******************************************************************************/
 /* EOF                                                                        */

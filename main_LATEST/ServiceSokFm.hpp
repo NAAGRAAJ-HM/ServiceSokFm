@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_ServiceSokFm:
-      INTERFACES_EXMCALPORTED_SERVICESOKFM
+      INTERFACES_EXPORTED_SERVICESOKFM
       public abstract_module
    ,  public class_ServiceSokFm_Functionality
 {

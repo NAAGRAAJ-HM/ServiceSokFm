@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : ServiceSokFm.hpp                                                         */
+/* File   : ServiceSokFm.hpp                                                  */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstServiceSokFm.hpp"
+#include "infServiceSokFm_ServiceNvM_Types.hpp"
 #include "CfgServiceSokFm.hpp"
 #include "ServiceSokFm_core.hpp"
 #include "infServiceSokFm_Exp.hpp"
